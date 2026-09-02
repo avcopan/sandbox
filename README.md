@@ -13,9 +13,14 @@ A disposable podman container for working in a project directory.
 >       "allowRead": ["~/.pixi", "~/.cache"],
 >       "allowWrite": ["~/.cache/rattler", "~/.cache/uv"]
 >     },
+>     "network": {
+>       "allowedDomains": [
+>         "<domain to allow>"
+>       ]
+>     },
 >     "credentials": {
 >       "envVars": [
->         { "name": "<ADD SENSITIVE ENV VAR HERE>", "mode": "deny" }
+>         { "name": "<env var to hide>", "mode": "deny" }
 >       ]
 >     }
 >   }
