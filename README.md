@@ -2,6 +2,26 @@
 
 A disposable podman container for working in a project directory.
 
+> [!NOTE]
+> Instead, I have settled on configuring sandboxing through ClaudeCode using the following settings:
+> ```json
+> {
+>   "sandbox": {
+>     "enabled": true,
+>     "filesystem": {
+>       "denyRead": ["~/"],
+>       "allowRead": ["~/.pixi", "~/.cache"],
+>       "allowWrite": ["~/.cache/rattler", "~/.cache/uv"]
+>     },
+>     "credentials": {
+>       "envVars": [
+>         { "name": "<ADD SENSITIVE ENV VAR HERE>", "mode": "deny" }
+>       ]
+>     }
+>   }
+> }
+> ```
+
 ## Set up a new machine
 
 ```sh
